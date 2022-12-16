@@ -1,0 +1,71 @@
+ 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Employee Data</div>
+    <div class="content">
+      <form action="app.py" method="POST">
+        <div class="user-details">
+            <div class="Title-details">
+                <input type="radio" name="Title" id="dot-1">
+                <input type="radio" name="Title" id="dot-2">
+                <span class="gender-title">Title</span>
+                <div class="category">
+                  <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Mr</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Ms</span>
+                </label>
+                
+                </div>
+              </div>
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter your name" name="First_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last name</span>
+            <input type="text" placeholder="Enter your Lastname" name="Last_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email id</span>
+            <input type="text" placeholder="Enter your email id" name="Email_id" required>
+          </div>
+          <div class="input-box">
+            <span class="details"> Enterprise id</span>
+            <input type="text" placeholder="Enter your Enterprise id" name="Enterprise_id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Project name</span>
+            <input type="text" placeholder="Enter your project name " name="Project_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Techonolgy</span>
+            <input type="text" placeholder="Enter your Techonolgy" name="Technology" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Manager</span>
+            <input type="text" placeholder="Enter your Manager name" name="Manager" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Location</span>
+            <input type="text" placeholder="Enter your Location" name="Location" required>
+          </div>
+          <div class="button">
+            <input type="submit" value="SUBMIT">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

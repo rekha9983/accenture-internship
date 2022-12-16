@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h1>Scores</h1>
+
+
+<form method="POST">
+<label>Match ID :</label>
+<input id="matchID" name="matchID" required type="number"><br>
+<label>Home Score:</label>
+<input id="homeScore" name="homeScore" required type="number"><br>
+<label>Away Score:</label>
+<input id="awayScore" name="awayScore" required type="number"><br>
+</form>
+
+<button id="addScoreButton">Add score</button>
+<button id="retrieveScoreButton">Retrieve all scores</button>
+<br>
+
+<div id="Scores">
+<ul id="scoresList">
+</ul>
+</div>
+
+<script>
+$(document).ready(function () {
+        var matchID = $('#matchID').val();
+        var homeScore = $('#homeScore').val();
+        var awayScore = $('#awayScore').val();
+
+        $("#addScoreButton").click(function () {
+                $.ajax({
+                        type: 'POST',
+                        data: {MatchID: matchID, Home_Score: homeScore, Away_Score: awayScore},
+                        url: "/addScore",
+                        success: added,
+                        error: showError
+                    }
+                );
+            }
+        );
+    }
+);
+
+
+$(document).ready(function () {
+        $("#retrieveScoreButton").click(function () {
+                console.log(id);
+                $.ajax({
+                        type: 'GET',
+                        dataType: "json",
+                        url: "/allScores",
+                        success: showScores,
+                        error: showError
+                    }
+                );
+            }
+        );
+    }
+);
+
+function showScores(responseData) {
+    $.each(responseData.matches, function (scores) {
+            $("#scoresList").append("<li type='square'>" +
+                "ScoreID: " + scores.Score_ID +
+                "Match Number: " + scores.Match_ID +
+                "Home: " + scores.Home_Score +
+                "Away: " + scores.Away_Score
+            );
+            $("#scoresList").append("</li>");
+        }
+    );
+}
+
+function added() {
+    alert("Added to db");
+}
+
+function showError() {
+    alert("failure");
+}
+
+
+</script>
+
+</body>
+
+</html>

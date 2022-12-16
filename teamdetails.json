@@ -1,0 +1,32 @@
+{
+    "team": [
+        {
+            "Team_name": "aarambh",
+            "Members": 5,
+            "Team_members_name": "namitha",
+            "Project_name": "aarambh project",
+            "Technology": "python",
+            "Time": "2 days"
+        },
+        {
+            "Team_name": "new team",
+            "Members": 5,
+            "Team_members_name": "simran",
+            "Project_name": "butterfly",
+            "Technology": "python",
+            "Time": "5 days"
+        },
+        {
+            "Team_name": "king team",
+            "Members": 3,
+            "Team_members_name": [
+                "rekha",
+                "neha",
+                "anshika"
+            ],
+            "Project_name": " aarambh",
+            "Technology": "python",
+            "Time": "2"
+        }
+    ]
+}
